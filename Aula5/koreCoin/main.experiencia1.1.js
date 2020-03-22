@@ -1,5 +1,7 @@
 const SHA256 = require('crypto-js/sha256');
 
+var data = new Date();
+
 class Block{
     constructor (index, timestamp, data, previousHash = ''){
         this.index = index;
@@ -22,7 +24,7 @@ class Blockchain{
     }
     
     createGenesisBlock(){
-        return new Block(0, "02/01/2018", "Genesis Block", "0");
+        return new Block(0, data, "Bloco inicial da koreCoin", "0");
     }
     
     getlatestBlock(){
@@ -61,6 +63,9 @@ let koreCoin = new Blockchain();
 koreCoin.addBlock(new Block (1, "01/01/2018", {amount: 20}));
 koreCoin.addBlock(new Block (2, "02/01/2018", {amount: 40}));
 koreCoin.addBlock(new Block (3, "02/01/2018", {amount: 40}));
+koreCoin.addBlock(new Block (4, "22/03/2020", [{amount1: 10},{amount2: 20}]));
+koreCoin.addBlock(new Block (5, "22/03/2020", [{amount1: 30},{amount2: 40},{amount3: 50}]));
+koreCoin.addBlock(new Block (6, "22/03/2020", [{amount1: 100},{amount2: 300,{amount3: 200}]));
 
 console.log('Is Blockchain valid? ' + koreCoin.isChainValid());
 
