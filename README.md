@@ -1,4 +1,3 @@
----
 ## Grupo8
 
 **João de Macedo** - A76268
@@ -7,4 +6,3 @@
 
 **Nelson Gonçalves** - A78173
 
----
