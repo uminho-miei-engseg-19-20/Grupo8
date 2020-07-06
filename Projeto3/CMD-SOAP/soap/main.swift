@@ -36,7 +36,12 @@ struct Random: ParsableCommand  {
     
         
     func validate(nm : String)->Bool {
-      
+      let charSet = NSCharacterSet.letters
+
+      if nm.rangeOfCharacter(from:charSet)?.isEmpty == false{
+          return false
+        }
+        
       if (!nm.contains("+351")){
           return false
       }
